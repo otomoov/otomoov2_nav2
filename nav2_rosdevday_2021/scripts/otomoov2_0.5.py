@@ -39,42 +39,6 @@ class Otomoov():
         print('Sleepng for 10sec\n')
         time.sleep(10)
 
-        # i = 0
-        # while not self.navigator.isNavComplete():
-
-        #     # Do something with the feedback
-        #     i = i + 1
-        #     feedback = self.navigator.getFeedback()
-        #     if feedback and i % 5 == 0:
-        #         print('Estimated time of arrival: ' + '{0:.0f}'.format(
-        #             Duration.from_msg(feedback.estimated_time_remaining).nanoseconds / 1e9)
-        #             + ' seconds.')
-
-        #         # Some navigation timeout to demo cancellation
-        #         if Duration.from_msg(feedback.navigation_time) > Duration(seconds=600.0):
-        #             self.navigator.cancelNav()
-
-        #         # Some navigation request change to demo preemption
-        #         if Duration.from_msg(feedback.navigation_time) > Duration(seconds=18.0):
-        #             self.goal_pose.pose.position.x = -3.0
-        #             self.navigator.goToPose(self.goal_pose)
-
-        # # Do something depending on the return code
-        # result = self.navigator.getResult()
-        # if result == NavigationResult.SUCCEEDED:
-        #     print('Goal succeeded!')
-        # elif result == NavigationResult.CANCELED:
-        #     print('Goal was canceled!')
-        # elif result == NavigationResult.FAILED:
-        #     print('Goal failed!')
-        # else:
-        #     print('Goal has an invalid return status!')
-
-        # print('Exiting Program')
-        # self.navigator.lifecycleShutdown()
-        # print('Program Exited')
-        # exit(0)
-
     def goToHome(self):
         # Wait for navigation to fully activate, since autostarting nav2
         self.navigator.waitUntilNav2Active()
